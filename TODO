@@ -1,0 +1,9 @@
+- Multi monitor handling
+	- WM_DISPLAYCHANGE message
+	- EnumDisplayDevices, EnumDisplayMonitors
+	- include Multimon.h, define COMPILE_MULTIMON_STUBS? Not necessary.
+- replace drawing strategy: do not draw the the whole area from scratch, move parts if we can
+
+
+- Dot/Line drawing
+- Semi-real color inversing

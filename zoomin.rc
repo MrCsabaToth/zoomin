@@ -1,0 +1,197 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "zoomin.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Hungarian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_HUN)
+#ifdef _WIN32
+LANGUAGE LANG_HUNGARIAN, SUBLANG_DEFAULT
+#pragma code_page(1250)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+ZOOMIN                  ICON                    "zoomin.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDACCEL_ZOOMIN ACCELERATORS 
+BEGIN
+    "^C",           MENU_EDIT_COPY,         ASCII,  NOINVERT
+    VK_INSERT,      MENU_EDIT_COPY,         VIRTKEY, CONTROL, NOINVERT
+    VK_F5,          MENU_EDIT_REFRESH,      VIRTKEY, NOINVERT
+    "G",            MENU_OPTIONS_SHOWGRID,  VIRTKEY, CONTROL, NOINVERT
+    "L",            MENU_OPTIONS_LBTNIRCAPTURE, VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDMENU_ZOOMIN MENU 
+BEGIN
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Copy\tCtrl+C",               MENU_EDIT_COPY
+        MENUITEM SEPARATOR
+        MENUITEM "&Refresh\tF5",                MENU_EDIT_REFRESH
+    END
+    POPUP "&Options"
+    BEGIN
+        MENUITEM "&Refresh Rate...",            MENU_OPTIONS_REFRESHRATE
+        MENUITEM "LBtnUp interrupts capture\tCtrl+L", 
+                                                MENU_OPTIONS_LBTNIRCAPTURE
+        , CHECKED
+        MENUITEM "Show &Grid\tCtrl+G",          MENU_OPTIONS_SHOWGRID
+        , CHECKED
+        MENUITEM "Grid &Options...",            MENU_OPTIONS_GRIDOPTIONS
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About...",                   MENU_HELP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+DID_ABOUT DIALOGEX 6, 16, 168, 126
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "About Microsoft ZoomIn"
+FONT 8, "Helv", 0, 0, 0x0
+BEGIN
+    ICON            "zoomin",IDC_STATIC,6,10,21,20
+    LTEXT           "Microsoft ZoomIn Version 3.20.001",IDC_STATIC,30,5,130,
+                    8
+    LTEXT           "Copyright© 1987-1995 Microsoft Corp.",IDC_STATIC,30,20,
+                    130,8
+    DEFPUSHBUTTON   "OK",IDOK,61,102,40,14
+    LTEXT           "Grid options: Csaba Tóth, 2002-2003, Graphisoft",
+                    IDC_STATIC,30,35,129,19
+    LTEXT           "Multi monitor capability (only Win2K, WinXP and above): Csaba Tóth, 2004, Graphisoft",
+                    IDC_STATIC,30,57,129,27
+END
+
+DID_REFRESHRATE DIALOG  6, 18, 180, 43
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Refresh Rate"
+FONT 8, "Helv"
+BEGIN
+    CONTROL         "&Enable Refresh Timer",DID_REFRESHRATEENABLE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,6,10,83,10
+    LTEXT           "&Interval (Tenths of Seconds):",-1,6,26,100,8
+    EDITTEXT        DID_REFRESHRATEINTERVAL,108,24,17,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "OK",IDOK,134,6,40,14
+    PUSHBUTTON      "Cancel",IDCANCEL,134,23,40,14
+END
+
+DID_GRIDOPTIONS DIALOG  0, 0, 187, 182
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Grid Options"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,130,160,50,14
+    PUSHBUTTON      "Defaults",IDDEFAULTS,70,160,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,10,160,50,14
+    CONTROL         "Draw grid during mouse tracking",IDC_DRAWTRACK,"Button",
+                    BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,10,10,170,20
+    CONTROL         "Left mouse button during tracking draws grid or switches the previous option",
+                    IDC_LEFTMOUSEBTN,"Button",BS_AUTOCHECKBOX | BS_MULTILINE | 
+                    WS_TABSTOP,10,35,170,20
+    CONTROL         "Grid dots' color are inverse of the underlying color or simply draw black dots",
+                    IDC_INVERSECOLOR,"Button",BS_AUTOCHECKBOX | BS_MULTILINE | 
+                    WS_TABSTOP,10,60,170,20
+    CONTROL         "Draw Line grid or dot grid",IDC_DRAWLINES,"Button",
+                    BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,10,85,170,20
+    CONTROL         "Drawing operation consists of several SetPixel to video memory, or do the drawing offscreen",
+                    IDC_VIDEOMEM,"Button",BS_AUTOCHECKBOX | BS_MULTILINE | 
+                    WS_DISABLED | WS_TABSTOP,10,110,170,20
+    CONTROL         "Use DirectX (DirectDraw)",IDC_USEDDRAW,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,10,135,170,20
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""zoomin.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    DID_ABOUT, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 125
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Hungarian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
